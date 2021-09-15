@@ -17,5 +17,6 @@ RUN { \
       echo 'module_hotfixes=true'; \
     }  > /etc/yum.repos.d/nginx.repo
 RUN yum install -y --disableplugin=subscription-manager nginx && yum clean all
+RUN yum install -y --disableplugin=subscription-manager ftp && yum clean all
 ENTRYPOINT ["nginx"]
 CMD ["-g","daemon off;"]
